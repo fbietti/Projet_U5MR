@@ -16,3 +16,16 @@ Ce fichier contient toutes les commandes qui m'ont permis d'obtenir la base de d
 ## Fichier code_analyse
 
 Ce fichier contient les commandes pour estimer les modèles. J'ai estimé trois modèles HLM. Le premier modèle est un modèle nul ou modèle 0. Il ne contient aucun prédicteur. Le modèle 1 contient tous les prédicteurs, mais il n'incorpore pas le temps (il a une version réduite avec seulement les variables statistiquement significatives). Le modèle 2 contient toutes les variables pour le temps (mais sans prendre en compte l'interaction des variables avec le temps et il contient aussi une version réduite). Le troisième modèle contient toutes les variables et leur interaction avec le temps (il a aussi une version réduite).
+
+Voici les modèles null, 1 et 1 réduit : 
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot2.png)
+
+Ici les modèles 2 et sa version réduite :
+
+
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot3.png)
+
+Enfin, vous trouverez ici les modèles 3 et sa version réduite : 
+
+
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot4.png)
