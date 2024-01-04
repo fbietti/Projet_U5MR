@@ -55,8 +55,8 @@ pib_kmeans <- edv_sa_hlm %>% group_by(country) %>%
 
 var<- c("mean_mort_inf","mean_urbain", 'mean_chomage',"mean_pib","mean_inf","mean_s_alim",  'mean_rev_50', 'mean_rev_10', 'mean_gini', "mean_heath_pib", 'mean_dpt3')
 
-# var<- c("mean_urbain", "mean_chomage","mean_pib" ,"mean_inf", "mean_s_alim", "mean_pex", 'mean_rev_50', 'mean_rev_50_s', 'mean_rev_50_2', 'mean_rev_10', 'mean_rev_10_s', 'mean_rev_10_2', 'mean_gini', "mean_heath_pib", 'mean_dpt3')
 
+# corrélation entre variables
 cor(pib_kmeans[,var], use = "complete.obs")
 round(cor(pib_kmeans[,var],use = "complete.obs"), digits = 3)
 var
@@ -66,12 +66,6 @@ corrplot(cor(pib_kmeans[,var], use= "pairwise.complete.obs"), method="circle")
 #interpretation: on a de cercles dont la couleur et la taille réprente la corrélation entre le v réprésentées
 # 
 
-
-#install.packages("psy")
-mdspca(pib_kmeans[,var])
-
-#pib_kmeans$Pair.factor <-as.character(pib_kmeans$Pair)
-#pib_kmeans$Generation.factor <-as.character(pib_kmeans$Generation)
 
 ### si jamais j'ai une vd et qq vi :
 expliquer<- "mean_mort_inf"
@@ -100,13 +94,6 @@ dfcontribution.individus
 
 dfcontribution.individus[dfcontribution.individus$Dim.1, ]
 
-
-dfcontribution.individus[dfcontribution.individus$Dim.1 >2, ]
-dfcontribution.individus[dfcontribution.individus$Dim.2 >2,]
-
-dfcontribution.individus[dfcontribution.individus$Dim.1 >3 &dfcontribution.individus$Dim.2 >3 ,]
-
-
 sort(dfcontribution.individus$Dim.1, decreasing = TRUE)
 order(dfcontribution.individus$Dim.1, decreasing = TRUE)
 
@@ -126,53 +113,15 @@ dimdesc(respca, proba=0.2)
 plot(respca, cex=0.8, invisible="quali", title="Graphe des individus")
 plot(respca, cex=0.8, habillage = "mean_mort_inf")
 
-
-### Ellipses de confiance autour des modalit?s
-plotellipses(respca)
-
-fviz_pca_ind(respca,
-             #geom.ind = "point", # Montre les points seulement (mais pas le "text")
-             #col.ind = ravioli$performance.bin, # colorer by groups
-             palette = c("#00AFBB", "#E7B800", "#FC4E07"),
-             #addEllipses = TRUE, # Ellipses de concentration
-             legend.title = "Groups"
-)
-
-
-fviz_pca_biplot(respca, repel = TRUE,
-                col.var = "#2E9FDF", # Couleur des variables
-                col.ind = "#696969"  # Couleur des individues
-)
-
-### Graphes sur les dimensions 3 et 4
-plot(respca, choix="ind", cex=0.8, title="Graphe des individus", axes=3:4)
-plot(respca, choix="var", title="Graphe des variables", axes=3:4)
+### Graphes sur les dimensions 1 et 2
 
 plot(respca, choix="ind", cex=0.8, title="Graphe des individus", axes=1:2)
 plot(respca, choix="var", title="Graphe des variables", axes=1:2)
 
 
-### S?lection des individus ###argument : habillage="Performance" permet de mettre une varaible de type fill...
-plot(respca, cex=0.8, select="cos2 0.7")
-plot(respca, cex=0.8, select="contrib 5", title="Groups")
-
-plot(respca, cex=0.8, select=c("Clay","Karpov"))
-
-### S?lection des variables
-plot(respca, choix="var", select="contrib 5")
-
-### 
-### 
-plot(respca, cex=0.8, select="cos2 0.7", title="Groups",
-     cex.main=1.1, cex.axis=0.9, shadow=TRUE, auto="y")
-
-
-fviz_pca_ind(respca,
-             geom.ind = "point", # Montre les points seulement (mais pas le "text")
-             #col.ind = pib_kmeans$mean_mort_inf, # colorer by groups
-             palette = c("#00AFBB", "#E7B800", "#FC4E07"),
-             addEllipses = TRUE, # Ellipses de concentration
-             legend.title = "Groups")
+### Graphes sur les dimensions 3 et 4
+plot(respca, choix="ind", cex=0.8, title="Graphe des individus", axes=3:4)
+plot(respca, choix="var", title="Graphe des variables", axes=3:4)
 
 ## contribution des dimensions
 fviz_eig(respca, addlabels = TRUE, ylim = c(0, 80), main = "Explained variance by dimension")
@@ -187,9 +136,5 @@ fviz_contrib(respca, choice = "var", axes = 2, top = 10)
 fviz_contrib(respca, choice = "ind", axes = 1)
 fviz_contrib(respca, choice = "ind", axes = 2)
 fviz_contrib(respca, choice = "ind", axes = 1:2)
-
-
-####
-####
 
 
