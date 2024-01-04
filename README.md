@@ -5,7 +5,7 @@ Ensuite, j'ai commencé à réfléchir sur la méthodologie pertinente. Après a
 
 Voici les courbes de la mortailté infantile en Amérique du Sud pour la période 2000-2020 :
 
-![alt text](https://github.com/fbietti/Projet_U5MR/tree/main/plots/plot1.png)
+[alt text](https://github.com/fbietti/Projet_U5MR/tree/main/plots/plot1.png)
 
 
 
