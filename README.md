@@ -45,7 +45,7 @@ Après, le graphique des variables :
 
 ![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot7.png)
 
-Puis, la variance expliquée par chaque dimension : 
+Puis, nous avons examiné la variance expliquée par chaque dimension : : 
 
 ![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot8.png)
 
