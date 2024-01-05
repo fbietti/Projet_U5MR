@@ -29,3 +29,27 @@ Enfin, vous trouverez ici les modèles 3 et sa version réduite :
 
 
 ![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot4.png)
+
+# Fichier pca
+Avant de commencer la modélisation, j'ai réalisé une analyse en composantes principales (ACP) afin d'obtenir une idée de la distribution des données. L'objectif était de déterminer quels pays sont similaires entre eux et quelles variables sont fortement corrélées, à l'exception du taux de mortalité infantile (U5MR). Je voulais savoir s'il existait des pays vraiment similaires entre eux et des groupes vraiment différents. Cette intuition s'est confirmée. La région possède des pays proches entre eux, formant des groupes assez distincts. 
+
+Pour réaliser l'ACP, j'ai sélectionné un ensemble restreint de variables liées au niveau de revenus, aux inégalités, au PIB, au niveau de développement, aux dépenses publiques en santé et au marché du travail. J'ai inclus la variable sur la mortalité mais pas directement sur le calcul des dimensions. 
+
+D'abord, vous pouvez voir la corrélation entre les variables incluses dans l'ACP :  
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot5.png)
+
+Ensuite, le graphique des individus en fonction de la variable mortalité infantile : 
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot6.png)
+
+Après, le graphique des variables : 
+
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot7.png)
+
+Puis, la variance expliquée par chaque dimension : 
+
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot8.png)
+
+Enfin, la contruibution de chaque individu pour le premier axe : 
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot9.png)
+
+
