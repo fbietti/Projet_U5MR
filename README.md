@@ -30,6 +30,12 @@ Enfin, vous trouverez ici les modèles 3 et sa version réduite :
 
 ![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot4.png)
 
+Après, j'ai calculé le lien entre les pentes et les ordonnées à l'origine : 
+
+![alt text](https://github.com/fbietti/Projet_U5MR/blob/main/plots/plot10.png)
+
+
+
 # Fichier pca
 Avant de commencer la modélisation, j'ai réalisé une analyse en composantes principales (ACP) afin d'obtenir une idée de la distribution des données. L'objectif était de déterminer quels pays sont similaires entre eux et quelles variables sont fortement corrélées, à l'exception du taux de mortalité infantile (U5MR). Je voulais savoir s'il existait des pays vraiment similaires entre eux et des groupes vraiment différents. Cette intuition s'est confirmée. La région possède des pays proches entre eux, formant des groupes assez distincts. 
 
