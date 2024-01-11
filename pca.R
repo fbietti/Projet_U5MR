@@ -63,8 +63,6 @@ var
 
 corrplot(cor(pib_kmeans[,var],use = "complete.obs"), method="circle")
 corrplot(cor(pib_kmeans[,var], use= "pairwise.complete.obs"), method="circle")
-#interpretation: on a de cercles dont la couleur et la taille réprente la corrélation entre le v réprésentées
-# 
 
 
 ### si jamais j'ai une vd et qq vi :
@@ -74,7 +72,8 @@ fpca(data=pib_kmeans, y=expliquer, x=explicatives, partial="No")
 
 ### on lance : 
 respca<-PCA(pib_kmeans[,var], quanti.sup = "mean_mort_inf")
-respca
+
+# On observe les différents éléments du résultat :
 respca$eig
 respca$var$contrib
 respca$var$coord
@@ -82,6 +81,7 @@ respca$var$cos2
 
 respca$ind$contrib
 respca$ind$coord
+
 
 ### TABLEAU CONTRIB VARIABLES 
 
@@ -101,27 +101,19 @@ order(dfcontribution.individus[dfcontribution.individus$Dim.1 >3, 1], decreasing
 
 
 
-corrplot(respca$var$cos2, is.corr=FALSE)
-
-
 ### Description des dimensions
 dimdesc(respca)
 dimdesc(respca, proba=0.2)
 
 
 ### Coloriage des individus en fonction de leur modalite
-plot(respca, cex=0.8, invisible="quali", title="Graphe des individus")
-plot(respca, cex=0.8, habillage = "mean_mort_inf")
+plot(respca, cex=0.8, habillage = "mean_mort_inf",  title="Graphe des individus")
 
 ### Graphes sur les dimensions 1 et 2
 
 plot(respca, choix="ind", cex=0.8, title="Graphe des individus", axes=1:2)
 plot(respca, choix="var", title="Graphe des variables", axes=1:2)
 
-
-### Graphes sur les dimensions 3 et 4
-plot(respca, choix="ind", cex=0.8, title="Graphe des individus", axes=3:4)
-plot(respca, choix="var", title="Graphe des variables", axes=3:4)
 
 ## contribution des dimensions
 fviz_eig(respca, addlabels = TRUE, ylim = c(0, 80), main = "Explained variance by dimension")
@@ -133,8 +125,6 @@ fviz_contrib(respca, choice = "var", axes = 2, top = 10)
 
 
 ### contribution des individus
-fviz_contrib(respca, choice = "ind", axes = 1)
-fviz_contrib(respca, choice = "ind", axes = 2)
 fviz_contrib(respca, choice = "ind", axes = 1:2)
 
 
