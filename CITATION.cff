@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Bietti
+    given-names: Federico
+    orcid: https://orcid.org/0000-0002-3912-3951
+title: "U5MR Project"
+version: 
+identifiers:
+  - type: 
+    value: 
+date-released: 2023-01-23
